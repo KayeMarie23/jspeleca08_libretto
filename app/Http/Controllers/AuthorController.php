@@ -22,7 +22,7 @@ class AuthorController extends Controller
     {
         $request->validate(['name' => 'required']);
         Author::create($request->all());
-        return redirect()->route('authors.index');
+        return redirect()->route('web.authors.index');
     }
 
     public function edit(Author $author)
@@ -34,12 +34,12 @@ class AuthorController extends Controller
     {
         $request->validate(['name' => 'required']);
         $author->update($request->all());
-        return redirect()->route('authors.index');
+        return redirect()->route('web.authors.index');
     }
 
     public function destroy(Author $author)
     {
         $author->delete();
-        return redirect()->route('authors.index');
+        return redirect()->route('web.authors.index');
     }
 }

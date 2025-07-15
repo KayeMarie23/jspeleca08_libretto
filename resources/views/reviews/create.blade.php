@@ -3,7 +3,7 @@
 @section('content')
 <h4>{{ isset($review) ? 'Edit Review' : 'Add Review' }}</h4>
 
-<form method="POST" action="{{ isset($review) ? route('reviews.update', $review) : route('reviews.store') }}">
+<form method="POST" action="{{ isset($review) ? route('web.reviews.update', $review) : route('web.reviews.store') }}">
     @csrf
     @if(isset($review)) @method('PUT') @endif
 

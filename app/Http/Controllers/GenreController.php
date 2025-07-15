@@ -22,7 +22,7 @@ class GenreController extends Controller
     {
         $request->validate(['name' => 'required']);
         Genre::create($request->all());
-        return redirect()->route('genres.index');
+        return redirect()->route('web.genres.index');
     }
 
     public function edit(Genre $genre)
@@ -34,12 +34,12 @@ class GenreController extends Controller
     {
         $request->validate(['name' => 'required']);
         $genre->update($request->all());
-        return redirect()->route('genres.index');
+        return redirect()->route('web.genres.index');
     }
 
     public function destroy(Genre $genre)
     {
         $genre->delete();
-        return redirect()->route('genres.index');
+        return redirect()->route('web.genres.index');
     }
 }

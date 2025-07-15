@@ -2,7 +2,7 @@
 
 @section('content')
 <h4>Reviews List</h4>
-<a href="{{ route('reviews.create') }}" class="btn btn-success btn-sm mb-2"><i class="bi bi-plus-circle"></i> Add Review</a>
+<a href="{{ route('web.reviews.create') }}" class="btn btn-success btn-sm mb-2"><i class="bi bi-plus-circle"></i> Add Review</a>
 
 <table class="table table-bordered">
     <thead>
@@ -22,8 +22,8 @@
             <td>{{ $review->content }}</td>
             <td>{{ $review->rating }}</td>
             <td>
-                <a href="{{ route('reviews.edit', $review) }}" class="btn btn-primary btn-sm">Edit</a>
-                <form action="{{ route('reviews.destroy', $review) }}" method="POST" style="display:inline-block;">
+                <a href="{{ route('web.reviews.edit', $review) }}" class="btn btn-primary btn-sm">Edit</a>
+                <form action="{{ route('web.reviews.destroy', $review) }}" method="POST" style="display:inline-block;">
                     @csrf @method('DELETE')
                     <button class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</button>
                 </form>

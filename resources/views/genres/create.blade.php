@@ -3,7 +3,7 @@
 @section('content')
 <h4>{{ isset($genre) ? 'Edit Genre' : 'Add Genre' }}</h4>
 
-<form method="POST" action="{{ isset($genre) ? route('genres.update', $genre) : route('genres.store') }}">
+<form method="POST" action="{{ isset($genre) ? route('web.genres.update', $genre) : route('web.genres.store') }}">
     @csrf
     @if(isset($genre)) @method('PUT') @endif
 

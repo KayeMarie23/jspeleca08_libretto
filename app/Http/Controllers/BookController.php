@@ -11,7 +11,7 @@ class BookController extends Controller
 {
     public function index()
     {
-        $books = Book::with(['author', 'genres'])->get();
+        $books = Book::with(['author', 'genres', 'reviews'])->get();
         return view('books.index', compact('books'));
     }
 
@@ -33,7 +33,7 @@ class BookController extends Controller
         $book = Book::create($request->only(['title', 'author_id']));
         $book->genres()->attach($request->genres);
 
-        return redirect()->route('books.index');
+        return redirect()->route('web.books.index');
     }
 
     public function edit(Book $book)
@@ -54,12 +54,12 @@ class BookController extends Controller
         $book->update($request->only(['title', 'author_id']));
         $book->genres()->sync($request->genres);
 
-        return redirect()->route('books.index');
+        return redirect()->route('web.books.index');
     }
 
     public function destroy(Book $book)
     {
         $book->delete();
-        return redirect()->route('books.index');
+        return redirect()->route('web.books.index');
     }
 }

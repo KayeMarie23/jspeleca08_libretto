@@ -3,7 +3,7 @@
 @section('content')
 <h4>{{ isset($author) ? 'Edit Author' : 'Add Author' }}</h4>
 
-<form method="POST" action="{{ isset($author) ? route('authors.update', $author) : route('authors.store') }}">
+<form method="POST" action="{{ isset($author) ? route('web.authors.update', $author) : route('web.authors.store') }}">
     @csrf
     @if(isset($author)) @method('PUT') @endif
 

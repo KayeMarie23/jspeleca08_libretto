@@ -3,7 +3,7 @@
 @section('content')
 <h4>{{ isset($book) ? 'Edit Book' : 'Add Book' }}</h4>
 
-<form method="POST" action="{{ isset($book) ? route('books.update', $book) : route('books.store') }}">
+<form method="POST" action="{{ isset($book) ? route('web.books.update', $book) : route('web.books.store') }}">
     @csrf
     @if(isset($book)) @method('PUT') @endif
 
