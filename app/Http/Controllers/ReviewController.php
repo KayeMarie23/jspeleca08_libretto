@@ -29,7 +29,7 @@ class ReviewController extends Controller
         ]);
 
         Review::create($request->all());
-        return redirect()->route('reviews.index');
+        return redirect()->route('web.reviews.index');
     }
 
     public function edit(Review $review)
@@ -47,12 +47,12 @@ class ReviewController extends Controller
         ]);
 
         $review->update($request->all());
-        return redirect()->route('reviews.index');
+        return redirect()->route('web.reviews.index');
     }
 
     public function destroy(Review $review)
     {
         $review->delete();
-        return redirect()->route('reviews.index');
+        return redirect()->route('web.reviews.index');
     }
 }
